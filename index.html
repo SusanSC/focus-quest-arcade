@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Quest Arcade</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1>Focus Quest Arcade</h1>
+      <p>One little quest at a time ✨</p>
+
+      <section class="arcade-section">
+        <label for="quest-input">What is your quest today?</label>
+        <input
+          id="quest-input"
+          type="text"
+          placeholder="Example: Read 5 pages"
+        />
+        <button id="set-quest-button" type="button">Set my quest</button>
+        <p>Your quest: <span id="current-quest">None yet</span></p>
+        <button id="complete-quest-button" type="button" disabled>
+          Complete quest⭐
+        </button>
+        <p>Stars: <span id="star-count">0</span></p>
+        <p>Arcade rank: <span id="arcade-rank">Quest Starter</span></p>
+
+        <h2>Completed quests</h2>
+        <ul id="completed-quests-list"></ul>
+      </section>
+
+      <section class="arcade-section">
+        <p>Focus timer: <span id="focus-timer">00:10</span></p>
+        <label for="select-focus-duration">Focus duration</label>
+        <select id="select-focus-duration">
+          <option value="10">10 seconds</option>
+          <option value="300">5 minutes</option>
+          <option value="900">15 minutes</option>
+          <option value="1500">25 minutes</option>
+        </select>
+        <button id="start-focus-button" type="button">Start focus</button>
+        <button id="pause-focus-button" type="button" disabled>
+          Pause focus
+        </button>
+        <button id="end-session-button" type="button" disabled>
+          End Session
+        </button>
+      </section>
+    </main>
+
+    <dialog id="end-focus-dialog">
+      <p>Focus session complete! ✨</p>
+      <button id="end-focus-dialog-button" type="button">Close</button>
+    </dialog>
+    <dialog id="star-earned-dialog">
+      <p>You earned a star! ⭐</p>
+      <button id="star-earned-dialog-button" type="button">Close</button>
+    </dialog>
+    <dialog id="active-quest-reminder">
+      <p id="quest-reminder-text">Your quest is still waiting for you ✨:</p>
+      <button id="quest-reminder-dialog-button" type="button">Close</button>
+    </dialog>
+    <dialog id="replace-quest-dialog">
+      <p>Replace your current quest?</p>
+      <button id="replace-quest-dialog-keep-button" type="button">
+        Keep quest
+      </button>
+      <button id="replace-quest-dialog-replace-button" type="button">
+        Replace quest
+      </button>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
+</html>
